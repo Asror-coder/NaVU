@@ -20,6 +20,7 @@
         "vue-loader": "^16.2.0"
     },
     "dependencies": {
+        "chokidar": "^3.5.3",
         "follow-redirects": "^1.14.8",
         "glob-parent": "^6.0.2",
         "vue": "^3.0.11",

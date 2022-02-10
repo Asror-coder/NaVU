@@ -125,6 +125,20 @@ class NodeController extends Controller
         }
     }
 
+    // Remove
+    public function setEmpty()
+    {
+        $nodes = Node::all();
+
+        foreach($nodes as $node) {
+            $node->simulation_1 = 3;
+            $node->updated_at = Carbon::now();
+            $node->save();
+        }
+
+        return $nodes;
+    }
+
     /**
      * Remove the specified node and its routes from database.
      *

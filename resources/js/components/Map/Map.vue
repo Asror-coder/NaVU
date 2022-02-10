@@ -1,30 +1,45 @@
 <template>
     <div>
-        <div class="flex flex-row">
-            <div v-show="!showSearchPath" class="mr-4 text-lg text-gray-700 pt-2">Choose floor: </div>
-            <form @change="getFloorNodes" v-show="!showSearchPath" class="flex-none">
-                <select name="floor" v-model="floor" required
-                    class="bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full">
-                    <option value="" disabled selected hidden>Floor</option>
-                    <option value="base">Base</option>
-                    <option value="1">First</option>
-                    <option value="2">Second</option>
-                    <option value="3">Third</option>
-                </select>
-            </form>
+        <div class="grid grid-cols-4">
+            <div class="flex">
+                <label v-show="!showSearchPath" class="mr-4 text-lg text-gray-700 pt-2">Floor: </label>
+                <form v-show="!showSearchPath"  v-if="floor" @change="getFloorNodes">
+                    <select name="floor" v-model="floor" required
+                        class="bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full">
+                        <option value="" disabled selected hidden>Floor</option>
+                        <option value="base">Base</option>
+                        <option value="1">First</option>
+                        <option value="2">Second</option>
+                        <option value="3">Third</option>
+                    </select>
+                </form>
+            </div>
 
-            <div class="flex-grow"></div>
-            <div class="flex-none">
+            <div class="col-span-2 flex justify-center">
+                <label v-show="!showSearchPath" class="mr-4 text-lg text-gray-700 pt-2">Crowd state: </label>
+                <form v-show="!showSearchPath" v-if="crowd_type" @change="changeCrowdType">
+                    <select name="crowd_type" v-model="crowd_type" required
+                        class="bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full">
+                        <option value="" disabled selected hidden>Crowd</option>
+                        <option value="crowd_status_id">Sensors</option>
+                        <option value="simulation_1">Simulation 1</option>
+                        <option value="simulation_2">Simulation 2</option>
+                        <option value="simulation_3">Empty</option>
+                    </select>
+                </form>
+            </div>
+
+            <div class="flex justify-end">
                 <Button @btn-click="toggleshowSearchPath"
                     :text="showSearchPath ? 'Close' : 'Search path'"
-                    :textColor="showSearchPath ? 'text-red-600' : 'text-gray-700'"
+                    :style="showSearchPath ? 'text-red-600 hover:bg-gray-100' : 'text-gray-700 bg-green-200 hover:bg-green-300'"
                 />
             </div>
         </div>
 
         <SearchPathForm @searchPath="searchPath" v-show="showSearchPath" :passedFloor="floor"/>
 
-        <Floors :nodes="nodes" v-if="nodes" class="mt-6" :showAllRoutes="showAllRoutes"/>
+        <Floors :nodes="nodes" v-if="nodes" class="mt-6" :showAllRoutes="showAllRoutes" :key="key" />
     </div>
 </template>
 
@@ -45,8 +60,10 @@ export default {
         return {
             nodes: null,
             showSearchPath: false,
-            floor: 'base',
-            showAllRoutes: null
+            floor: '',
+            showAllRoutes: null,
+            crowd_type: '',
+            key: 0,
         }
     },
     methods: {
@@ -54,6 +71,8 @@ export default {
             this.showSearchPath = !this.showSearchPath
         },
         async getFloorNodes() {
+            localStorage.setItem('floor', this.floor)
+
             await axios.get(`/api/node/floor/${this.floor}`).then((response)=>{
                 if(response.data.length > 0) {
                     this.nodes = response.data;
@@ -73,9 +92,25 @@ export default {
                 console.log(error.response.data.errors);
             })
         },
+        getCrowdType() {
+            if (!localStorage.getItem('crowd_type')) {
+                localStorage.setItem('crowd_type', 'crowd_status_id')
+                this.crowd_type = 'crowd_status_id'
+            }
+            else this.crowd_type = localStorage.getItem('crowd_type')
+        },
+        changeCrowdType() {
+            if (localStorage.getItem('crowd_type') != this.crowd_type)
+                localStorage.setItem('crowd_type', this.crowd_type)
+            this.key++;
+        }
     },
     mounted() {
+        if (localStorage.getItem('floor')) this.floor = localStorage.getItem('floor');
+        else this.floor = 'base';
+
         this.getFloorNodes()
+        this.getCrowdType()
     }
 }
 </script>

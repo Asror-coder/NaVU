@@ -380,7 +380,16 @@ export default {
         getStatus(nodeName) {
             for (var i=0; i < this.nodes.length; i++) {
                 if (this.nodes[i].name == nodeName) {
-                    return this.nodes[i].crowd_status_id;
+                    switch (localStorage.getItem('crowd_type')) {
+                        case 'simulation_1':
+                            return this.nodes[i].simulation_1;
+                        case 'simulation_2':
+                            return this.nodes[i].simulation_2;
+                        case 'simulation_3':
+                            return this.nodes[i].simulation_3;
+                        default:
+                            return this.nodes[i].crowd_status_id;
+                    }
                 }
             }
         },

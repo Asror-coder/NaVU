@@ -28,6 +28,8 @@ Route::prefix('/node')->group( function() {
     Route::get('/show/{id}', [NodeController::class, 'show']);
     Route::put('/setusers/{id}', [NodeController::class, 'setNumUsers']);
     Route::delete('/delete/{id}', [NodeController::class, 'destroy']);
+
+    // Route::put('/empty', [NodeController::class, 'setEmpty']);      //remove
 });
 
 Route::prefix('/route')->group( function() {

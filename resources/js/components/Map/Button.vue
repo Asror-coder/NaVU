@@ -1,6 +1,6 @@
 <template>
-    <button @click="onClick()" :class="textColor"
-        class="px-3 hover:text-blue-600 focus:outline-none mb-1">
+    <button @click="onClick()" :class="style"
+        class="px-5 hover:text-blue-600 focus:outline-none mb-1 p-2 rounded-md shadow-md">
         {{text}}
     </button>
 </template>
@@ -10,7 +10,7 @@ export default {
     name: 'Button',
     props: {
         text: String,
-        textColor: String
+        style: String
     },
     methods: {
         onClick() {
