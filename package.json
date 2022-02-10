@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "follow-redirects": "^1.14.8",
+        "glob-parent": "^6.0.2",
         "vue": "^3.0.11",
         "vue-axios": "^3.2.4",
         "vue-router": "^3.5.2"
