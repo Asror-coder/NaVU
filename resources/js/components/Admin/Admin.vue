@@ -44,8 +44,6 @@ export default {
     },
     methods: {
         async fetchNodes() {
-            console.log(this.floor);    //REMOVE
-
             await axios.get(`/api/node/floor/${this.floor}`).then((response)=>{
                 if(response.data.length > 0) this.nodes = response.data;
             }).catch((error) => {

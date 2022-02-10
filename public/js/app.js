@@ -16696,16 +16696,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log(_this.floor); //REMOVE
-
-                _context.next = 3;
+                _context.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_3___default().get("/api/node/floor/".concat(_this.floor)).then(function (response) {
                   if (response.data.length > 0) _this.nodes = response.data;
                 })["catch"](function (error) {
                   console.log(error.response.data.errors);
                 });
 
-              case 3:
+              case 2:
               case "end":
                 return _context.stop();
             }
