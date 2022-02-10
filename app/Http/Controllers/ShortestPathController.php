@@ -34,7 +34,7 @@ class ShortestPathController extends Controller
             ]);
         }
 
-        $this->dijkstra($startId, $endId);
+        $this->dijkstra($startId, $endId, $request->crowdType);
 
         return $this->getPath();
 
@@ -62,7 +62,7 @@ class ShortestPathController extends Controller
     }
 
     // Generate shortest path according to Dijkstra's algorithm
-    private function dijkstra($startId, $endId) {
+    private function dijkstra($startId, $endId, $crowdType) {
         // Current node
         $curNode = array(
             'nodeId' => $startId,
@@ -76,8 +76,21 @@ class ShortestPathController extends Controller
             $curNodeRoutes = $nodeRouteController->index($curNode['nodeId']);
 
             foreach($curNodeRoutes as $curNodeRoute) {
+                $distance = 0;
 
-                $distance = $curNodeRoute->crowd_status_id + $curNode['distance'];
+                switch ($crowdType) {
+                    case 'simulation_1':
+                        $distance = $curNodeRoute->simulation_1 + $curNode['distance'];
+                        break;
+                    case 'simulation_2':
+                        $distance = $curNodeRoute->simulation_2 + $curNode['distance'];
+                        break;
+                    case 'simulation_3':
+                        $distance = $curNodeRoute->simulation_3 + $curNode['distance'];
+                        break;
+                    default:
+                        $distance = $curNodeRoute->crowd_status_id + $curNode['distance'];
+                }
 
                 $newNode = array(
                     'nodeId' => $curNodeRoute->id,

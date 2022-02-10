@@ -18258,15 +18258,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         localStorage.setItem('crowd_type', 'crowd_status_id');
         this.crowd_type = 'crowd_status_id';
       } else this.crowd_type = localStorage.getItem('crowd_type');
+
+      this.getFloorNodes();
     },
     changeCrowdType: function changeCrowdType() {
       if (localStorage.getItem('crowd_type') != this.crowd_type) localStorage.setItem('crowd_type', this.crowd_type);
       this.key++;
+      this.getFloorNodes();
     }
   },
   mounted: function mounted() {
     if (localStorage.getItem('floor')) this.floor = localStorage.getItem('floor');else this.floor = 'base';
-    this.getFloorNodes();
     this.getCrowdType();
   }
 });
@@ -18302,13 +18304,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   props: {
     message: '',
-    passedFloor: ''
+    passedFloor: '',
+    crowdType: ''
   },
   data: function data() {
     return {
       form: {
         startId: null,
-        endId: null
+        endId: null,
+        crowdType: ''
       },
       exception: this.message
     };
@@ -18345,6 +18349,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       immediate: true,
       handler: function handler(newVal, oldVal) {
         this.exception = newVal;
+      }
+    },
+    crowdType: {
+      immediate: true,
+      handler: function handler(newVal, oldVal) {
+        this.form.crowdType = newVal;
       }
     }
   }
@@ -24990,10 +25000,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["onBtnClick", "text", "style"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_SearchPathForm, {
     onSearchPath: $options.searchPath,
-    passedFloor: $data.floor
+    passedFloor: $data.floor,
+    crowdType: $data.crowd_type
   }, null, 8
   /* PROPS */
-  , ["onSearchPath", "passedFloor"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.showSearchPath]]), $data.nodes ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Floors, {
+  , ["onSearchPath", "passedFloor", "crowdType"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.showSearchPath]]), $data.nodes ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Floors, {
     nodes: $data.nodes,
     "class": "mt-6",
     showAllRoutes: $data.showAllRoutes,

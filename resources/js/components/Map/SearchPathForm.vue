@@ -31,13 +31,15 @@ export default {
     },
     props: {
         message: '',
-        passedFloor: ''
+        passedFloor: '',
+        crowdType: ''
     },
     data() {
         return {
             form: {
                 startId: null,
-                endId: null
+                endId: null,
+                crowdType: ''
             },
             exception: this.message,
         }
@@ -65,6 +67,12 @@ export default {
                 this.exception = newVal
             }
         },
+        crowdType: {
+            immediate: true,
+            handler (newVal, oldVal) {
+                this.form.crowdType = newVal
+            }
+        }
     }
 }
 </script>

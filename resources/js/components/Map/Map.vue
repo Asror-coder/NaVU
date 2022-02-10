@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <SearchPathForm @searchPath="searchPath" v-show="showSearchPath" :passedFloor="floor"/>
+        <SearchPathForm @searchPath="searchPath" v-show="showSearchPath" :passedFloor="floor" :crowdType="crowd_type" />
 
         <Floors :nodes="nodes" v-if="nodes" class="mt-6" :showAllRoutes="showAllRoutes" :key="key" />
     </div>
@@ -98,18 +98,21 @@ export default {
                 this.crowd_type = 'crowd_status_id'
             }
             else this.crowd_type = localStorage.getItem('crowd_type')
+
+            this.getFloorNodes()
         },
         changeCrowdType() {
             if (localStorage.getItem('crowd_type') != this.crowd_type)
                 localStorage.setItem('crowd_type', this.crowd_type)
             this.key++;
+
+            this.getFloorNodes()
         }
     },
     mounted() {
         if (localStorage.getItem('floor')) this.floor = localStorage.getItem('floor');
         else this.floor = 'base';
 
-        this.getFloorNodes()
         this.getCrowdType()
     }
 }
