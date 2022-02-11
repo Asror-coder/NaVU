@@ -125,18 +125,15 @@ class NodeController extends Controller
         }
     }
 
-    // Remove
-    public function setEmpty()
+    public function setSimulation($id, Request $request)
     {
-        $nodes = Node::all();
+        $node = Node::find($id);
 
-        foreach($nodes as $node) {
-            $node->simulation_1 = 3;
-            $node->updated_at = Carbon::now();
-            $node->save();
-        }
+        if ($request->type == 1) $node->simulation_1 = $request->crowd_status;
+        else if ($request->type == 2) $node->simulation_2 = $request->crowd_status;
 
-        return $nodes;
+        $node->updated_at = Carbon::now();
+        $node->save();
     }
 
     /**
