@@ -1,7 +1,7 @@
 <template>
     <div class="flex mt-2">
         <div class="flex justify-center mr-4">
-            <label class="mr-4 text-gray-700">Simulation 1: </label>
+            <label class="mr-4 text-gray-700">Mornings: </label>
             <form v-if="simulation_1" @change="changeCrowdType(1)">
                 <select name="simulation_1" v-model="simulation_1" required
                     class="bg-gray-100 p-1 shadow-lg rounded focus:outline-none w-full">
@@ -17,7 +17,7 @@
         </div>
 
         <div class="flex justify-center">
-            <label class="mr-4 text-gray-700">Simulation 2: </label>
+            <label class="mr-4 text-gray-700">Afternoons: </label>
             <form v-if="simulation_2" @change="changeCrowdType(2)">
                 <select name="simulation_2" v-model="simulation_2" required
                     class="bg-gray-100 p-1 shadow-lg rounded focus:outline-none w-full">

@@ -4,17 +4,17 @@
             <span class="text-na">NA</span><span class="text-vu">VU</span>
         </div>
 
-        <div class="flex-none grid grid-cols-4 gap-4">
-            <div class="col-span-1">
-                <Menu @change-page="goToPage"/>
+        <nav>
+            <div class="flex-none grid grid-cols-4 gap-4">
+                <div class="col-span-1">
+                    <Menu/>
+                </div>
+                <div class="col-span-2">
+                    <router-view></router-view>
+                </div>
+                <div class="col-span-3"></div>
             </div>
-            <div class="col-span-2">
-                <Map v-if="currentPage == 'Map'"/>
-                <Nodes v-else-if="currentPage == 'Nodes'"/>
-                <Admin v-else-if="currentPage == 'Admin'"/>
-            </div>
-            <div class="col-span-3"></div>
-        </div>
+        </nav>
 
         <div class="flex-grow"></div>
 
@@ -37,16 +37,6 @@ export default {
         Map,
         Nodes,
         Admin
-    },
-    data() {
-        return {
-            currentPage: 'Map'
-        }
-    },
-    methods: {
-        goToPage(newPage) {
-            this.currentPage = newPage
-        }
     }
 }
 </script>

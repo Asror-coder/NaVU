@@ -50,6 +50,8 @@ export default {
                 console.log(error.response.data.errors);
             })
 
+            //to retrieve all nodes
+
             // await axios.get('/api/node/all').then((response)=>{
             //     if(response.data.length > 0) this.nodes = response.data;
             // }).catch((error) => {
@@ -74,6 +76,10 @@ export default {
                 this.fetchNodes()
             }
         },
+    },
+     mounted() {
+        if (localStorage.getItem('floor')) this.floor = localStorage.getItem('floor');
+        else this.floor = 'base';
     }
 }
 </script>
