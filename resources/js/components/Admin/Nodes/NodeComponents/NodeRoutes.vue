@@ -136,15 +136,16 @@ export default {
         }
     },
     mounted() {
-        this.getRoutes()
+        // this.getRoutes()
+        this.routes = this.node.routes
     },
-    watch: {
-        changeRoutes: {
-            immediate: true,
-            handler (newVal, oldVal) {
-                if (newVal == this.node.id) this.getRoutes()
-            }
-        }
-    }
+    // watch: {
+    //     changeRoutes: {
+    //         immediate: true,
+    //         handler (newVal, oldVal) {
+    //             if (newVal == this.node.id) this.getRoutes()
+    //         }
+    //     }
+    // }
 };
 </script>

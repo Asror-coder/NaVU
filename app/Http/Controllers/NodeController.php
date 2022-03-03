@@ -6,6 +6,7 @@ use App\Models\Node;
 use Carbon\Carbon;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NodeController extends Controller
 {
@@ -21,7 +22,15 @@ class NodeController extends Controller
 
     public function getFloorNodes($floor)
     {
-        return Node::where('floor', $floor)->get();
+        $nodes = Node::where('floor', $floor)->get();
+
+        $nodeRouteController = new NodeRouteController;
+        foreach($nodes as $node) {
+            $routes = $nodeRouteController->index($node->id);
+            $node->routes = $routes;
+        }
+
+        return $nodes;
     }
 
     /**

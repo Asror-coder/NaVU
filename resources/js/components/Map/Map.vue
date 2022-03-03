@@ -21,9 +21,9 @@
                     <select name="crowd_type" v-model="crowd_type" required
                         class="bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full">
                         <option value="" disabled selected hidden>Crowd</option>
-                        <option value="crowd_status_id">Sensors</option>
-                        <option value="simulation_1">Simulation 1</option>
-                        <option value="simulation_2">Simulation 2</option>
+                        <option value="crowd_status_id">Real time</option>
+                        <option value="simulation_1">Mornings</option>
+                        <option value="simulation_2">Afternoon</option>
                         <option value="simulation_3">Empty</option>
                     </select>
                 </form>

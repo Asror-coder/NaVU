@@ -17140,7 +17140,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   methods: {
-    //user = a person connected to WiFi AP
     calculateAreaUser: function calculateAreaUser() {
       return (this.node.area / this.num_users).toFixed(2);
     },
@@ -17345,16 +17344,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   mounted: function mounted() {
-    this.getRoutes();
-  },
-  watch: {
-    changeRoutes: {
-      immediate: true,
-      handler: function handler(newVal, oldVal) {
-        if (newVal == this.node.id) this.getRoutes();
-      }
-    }
-  }
+    // this.getRoutes()
+    this.routes = this.node.routes;
+  } // watch: {
+  //     changeRoutes: {
+  //         immediate: true,
+  //         handler (newVal, oldVal) {
+  //             if (newVal == this.node.id) this.getRoutes()
+  //         }
+  //     }
+  // }
+
 });
 
 /***/ }),
@@ -25099,7 +25099,7 @@ var _hoisted_10 = {
   "class": "mr-4 text-lg text-gray-700 pt-2"
 };
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"\" disabled selected hidden>Crowd</option><option value=\"crowd_status_id\">Sensors</option><option value=\"simulation_1\">Simulation 1</option><option value=\"simulation_2\">Simulation 2</option><option value=\"simulation_3\">Empty</option>", 5);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"\" disabled selected hidden>Crowd</option><option value=\"crowd_status_id\">Real time</option><option value=\"simulation_1\">Mornings</option><option value=\"simulation_2\">Afternoon</option><option value=\"simulation_3\">Empty</option>", 5);
 
 var _hoisted_16 = {
   "class": "flex justify-end"

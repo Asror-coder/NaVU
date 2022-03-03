@@ -87,8 +87,6 @@ export default {
         }
     },
     methods: {
-        //user = a person connected to WiFi AP
-
         calculateAreaUser() {
             return (this.node.area / this.num_users).toFixed(2)
         },
