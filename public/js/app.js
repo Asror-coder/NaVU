@@ -20375,7 +20375,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     width: 2
   }, null, 8
   /* PROPS */
-  , ["status"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $options.isInPath('atrium-staircases', '1B-C-NU_01B13')]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Line, {
+  , ["status"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $options.isInPath('atrium-staircases', '1B-C-NU_01B13') || $options.isInPath('atrium-staircases', '2At-Staircase')]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Line, {
     status: $options.getStatus('atrium-staircases'),
     rotate: 22,
     height: 140,

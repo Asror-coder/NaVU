@@ -38,7 +38,7 @@
             <Line :status="getStatus('atrium-staircases')" :rotate="35" :height="70" :left="489" :top="352" :width="2"
                 v-show="isInPath('atrium-staircases','1A-AS')"/>
             <Line :status="getStatus('atrium-staircases')" :rotate="-6" :height="88" :left="472" :top="412" :width="2"
-                v-show="isInPath('atrium-staircases','1B-C-NU_01B13')"/>
+                v-show="isInPath('atrium-staircases','1B-C-NU_01B13') || isInPath('atrium-staircases','2At-Staircase')"/>
             <Line :status="getStatus('atrium-staircases')" :rotate="22" :height="140" :left="442" :top="410" :width="2"
                 v-show="isInPath('atrium-staircases','atrium-grand-cafe')"/>
         </div>
