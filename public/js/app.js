@@ -25293,7 +25293,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $data.floor = $event;
     }),
     required: "",
-    "class": "bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full"
+    "class": "appearance-none bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full"
   }, [_hoisted_4], 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.floor]])], 544
@@ -25311,7 +25311,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $data.crowd_type = $event;
     }),
     required: "",
-    "class": "bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full"
+    "class": "appearance-none bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full"
   }, [_hoisted_11], 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.crowd_type]])], 544

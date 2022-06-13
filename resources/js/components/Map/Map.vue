@@ -5,7 +5,7 @@
                 <label v-show="!showSearchPath" class="mr-4 text-lg text-gray-700 pt-2">Floor: </label>
                 <form v-show="!showSearchPath"  v-if="floor" @change="getFloorNodes">
                     <select name="floor" v-model="floor" required
-                        class="bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full">
+                        class="appearance-none bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full">
                         <option value="" disabled selected hidden>Floor</option>
                         <option value="base">Base</option>
                         <option value="1">First</option>
@@ -19,7 +19,7 @@
                 <label v-show="!showSearchPath" class="mr-4 text-lg text-gray-700 pt-2">Crowd state: </label>
                 <form v-show="!showSearchPath" v-if="crowd_type" @change="changeCrowdType">
                     <select name="crowd_type" v-model="crowd_type" required
-                        class="bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full">
+                        class="appearance-none bg-gray-100 p-2 shadow-lg rounded focus:outline-none w-full">
                         <option value="" disabled selected hidden>Crowd</option>
                         <option value="crowd_status_id">Real time</option>
                         <option value="simulation_1">Mornings</option>
