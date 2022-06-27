@@ -24,7 +24,7 @@
                         <option value="crowd_status_id">Real time</option>
                         <option value="simulation_1">Mornings</option>
                         <option value="simulation_2">Afternoon</option>
-                        <option value="simulation_3">Empty</option>
+                        <option value="simulation_3">Night (empty)</option>
                     </select>
                 </form>
             </div>

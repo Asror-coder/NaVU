@@ -25268,7 +25268,7 @@ var _hoisted_10 = {
   "class": "mr-4 text-lg text-gray-700 pt-2"
 };
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"\" disabled selected hidden>Crowd</option><option value=\"crowd_status_id\">Real time</option><option value=\"simulation_1\">Mornings</option><option value=\"simulation_2\">Afternoon</option><option value=\"simulation_3\">Empty</option>", 5);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"\" disabled selected hidden>Crowd</option><option value=\"crowd_status_id\">Real time</option><option value=\"simulation_1\">Mornings</option><option value=\"simulation_2\">Afternoon</option><option value=\"simulation_3\">Night (empty)</option>", 5);
 
 var _hoisted_16 = {
   "class": "flex justify-end"
