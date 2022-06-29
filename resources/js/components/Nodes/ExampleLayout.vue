@@ -1,7 +1,5 @@
 <template>
     <div>
-
-        Example
         <div class="relative" style="height: 900px;">
             <img :src="'./images/example.jpg'" class="absolute">
 
@@ -116,10 +114,10 @@
 </template>
 
 <script>
-import Line from './components/line.vue'
+import Line from '../Map/Floors/components/line.vue'
 
 export default {
-    name: 'Example',
+    name: 'ExampleLayout',
     components: {
         Line
     },

@@ -26,20 +26,20 @@
             </div>
         </div>
 
-        <Example :nodes="pathNodes ? pathNodes : nodes" v-if="nodes" class="mt-5"/>
+        <ExampleLayout :nodes="pathNodes ? pathNodes : nodes" v-if="nodes" class="mt-5"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import Example from '../Map/Floors/Example.vue'
+import ExampleLayout from './ExampleLayout.vue'
 import SearchPathExample from './SearchPathExample.vue'
 
 export default {
     name: 'Nodes',
     components: {
         SearchPathExample,
-        Example
+        ExampleLayout
     },
     data() {
         return {

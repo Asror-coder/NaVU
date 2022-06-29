@@ -27,16 +27,10 @@
 
 <script>
 import Menu from './Menu/Menu.vue'
-import Map from './Map/Map.vue'
-import Nodes from './Nodes/Nodes.vue'
-import Admin from './Admin/Admin.vue'
 
 export default {
     components: {
         Menu,
-        Map,
-        Nodes,
-        Admin
     }
 }
 </script>

@@ -10,7 +10,7 @@
 
             <!-- Nodes -->
             <Button @btn-click="menuClick"
-                :text="'Nodes'"
+                :text="'Example'"
                 :color="this.$route.path == '/nodes' ? '#33ADE8' : '#EAEAEA'"
                 :textColor="this.$route.path == '/nodes' ? 'white' : 'black'"/>
 
@@ -37,7 +37,7 @@ export default {
         menuClick(newPage) {
             if (newPage == 'Map')
                 this.$router.push({name:'Map'})
-            else if (newPage == 'Nodes')
+            else if (newPage == 'Example')
                 this.$router.push({name:'Nodes'})
             else if (newPage == 'Admin')
                 this.$router.push({name:'Admin'})

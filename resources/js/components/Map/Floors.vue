@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import Example from './Floors/Example.vue'
 import Base from './Floors/base_floor/Base.vue'
 import First from './Floors/first_floor/First.vue'
 import Second from './Floors/second_floor/Second.vue'
@@ -19,7 +18,6 @@ import Third from './Floors/third_floor/Third.vue'
 export default {
     name: 'Floors',
     components: {
-        Example,
         Base,
         First,
         Second,
