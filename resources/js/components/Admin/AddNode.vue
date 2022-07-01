@@ -56,7 +56,9 @@ export default {
     },
     methods: {
         async addNode() {
-            this.$emit('addNode',this.form)
+            //This function should be disabled at the end of development period
+
+            // this.$emit('addNode',this.form)
         }
     },
     watch: {

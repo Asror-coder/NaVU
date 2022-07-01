@@ -61,7 +61,9 @@ export default {
                     crowd_status: this.simulation_2
                 }
 
-            await axios.put(`/api/node/simulation/${this.node.id}`, request)
+            // This function should be disabled at the end of development period
+
+            // await axios.put(`/api/node/simulation/${this.node.id}`, request)
         }
     },
     mounted() {

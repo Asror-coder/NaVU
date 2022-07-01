@@ -17056,17 +17056,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   methods: {
-    addNode: function addNode() {
-      var _this = this;
+    addNode: function addNode() {//This function should be disabled at the end of development period
+      // this.$emit('addNode',this.form)
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this.$emit('addNode', _this.form);
-
-              case 1:
               case "end":
                 return _context.stop();
             }
@@ -17294,11 +17291,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 };else if (sim == 2) request = {
                   type: sim,
                   crowd_status: _this.simulation_2
-                };
-                _context.next = 4;
-                return axios.put("/api/node/simulation/".concat(_this.node.id), request);
+                }; // This function should be disabled at the end of development period
+                // await axios.put(`/api/node/simulation/${this.node.id}`, request)
 
-              case 4:
+              case 2:
               case "end":
                 return _context.stop();
             }
