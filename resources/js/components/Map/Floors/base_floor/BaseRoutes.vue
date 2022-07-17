@@ -114,6 +114,8 @@ export default {
                             return this.nodes[i].simulation_2;
                         case 'simulation_3':
                             return this.nodes[i].simulation_3;
+                        case 'co2_crowd_level':
+                            return this.nodes[i].co2_crowd_level;
                         default:
                             return this.nodes[i].crowd_status_id;
                     }

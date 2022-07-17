@@ -14,6 +14,11 @@ class Node extends Model
         'area',
         'num_users',
         'crowd_status_id',
-        'floor'
+        'floor',
+        'simulation_1',
+        'simulation_2',
+        'simulation_3',
+        'co2_crowd_level',
+        'co2',
     ];
 }

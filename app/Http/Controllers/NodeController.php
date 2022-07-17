@@ -134,6 +134,48 @@ class NodeController extends Controller
         }
     }
 
+    public function setCOtwo($id, Request $request) {
+
+        $this->validate($request,[
+            'co2'=>'required',
+        ]);
+
+        $node = Node::find($id);
+
+        if ($node) {
+            $node->update(['co2' => $request->co2]);
+
+            switch ($request->co2) {
+                case $request->co2 <= 500:
+                    $node->update(['co2_crowd_level' => 1]);
+                    break;
+                case $request->co2 <= 800:
+                    $node->update(['co2_crowd_level' => 2]);
+                    break;
+                case $request->co2 <= 1000:
+                    $node->update(['co2_crowd_level' => 3]);
+                    break;
+                case $request->co2 <= 1200:
+                    $node->update(['co2_crowd_level' => 4]);
+                    break;
+                case $request->co2 <= 1400:
+                    $node->update(['co2_crowd_level' => 5]);
+                    break;
+                case $request->co2 > 1400:
+                    $node->update(['co2_crowd_level' => 6]);
+                    break;
+            }
+
+            $node->update(['updated_at' => Carbon::now()]);
+
+            return $node;
+        } else {
+            return response([
+                'message' => ['There is no such node in the system.']
+            ]);
+        }
+    }
+
     public function setSimulation($id, Request $request)
     {
         $node = Node::find($id);

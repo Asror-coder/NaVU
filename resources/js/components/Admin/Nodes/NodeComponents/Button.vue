@@ -1,7 +1,7 @@
 <template>
     <button @click="onClick()" :class="textColor"
         class="px-3 hover:text-blue-600 focus:outline-none mb-1">
-        {{text}}
+        {{ text }}
     </button>
 </template>
 

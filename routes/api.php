@@ -29,6 +29,7 @@ Route::prefix('/node')->group( function() {
     Route::put('/setusers/{id}', [NodeController::class, 'setNumUsers']);
     Route::delete('/delete/{id}', [NodeController::class, 'destroy']);
     Route::put('/simulation/{id}', [NodeController::class, 'setSimulation']);
+    Route::put('/setcotwo/{id}', [NodeController::class, 'setCOtwo']);
 });
 
 Route::prefix('/route')->group( function() {

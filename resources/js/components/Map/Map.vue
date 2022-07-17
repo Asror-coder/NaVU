@@ -25,6 +25,7 @@
                         <option value="simulation_1">Mornings</option>
                         <option value="simulation_2">Afternoon</option>
                         <option value="simulation_3">Night (empty)</option>
+                        <option value="co2_crowd_level">CO2 level</option>
                     </select>
                 </form>
             </div>

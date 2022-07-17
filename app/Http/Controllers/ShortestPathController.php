@@ -88,6 +88,9 @@ class ShortestPathController extends Controller
                     case 'simulation_3':
                         $distance = $curNodeRoute->simulation_3 + $curNode['distance'];
                         break;
+                    case 'co2_crowd_level':
+                        $distance = $curNodeRoute->co2_crowd_level + $curNode['distance'];
+                        break;
                     default:
                         $distance = $curNodeRoute->crowd_status_id + $curNode['distance'];
                 }
